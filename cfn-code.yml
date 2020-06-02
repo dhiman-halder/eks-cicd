@@ -133,7 +133,7 @@ Resources:
               Configuration:
                 Owner: !Ref GitHubUser
                 Repo: !Ref GitSourceRepo
-                Branch: 'master'
+                Branch: master
                 OAuthToken: !Ref GitHubToken
               OutputArtifacts:
                 - Name: App
