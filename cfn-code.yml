@@ -83,6 +83,7 @@ Resources:
                   - eks:Describe*
                   - ecr:GetAuthorizationToken
                   - logs:*
+                  - ec2:*
               - Resource: !Sub arn:aws:s3:::${ArtifactBucket}/*
                 Effect: Allow
                 Action:
