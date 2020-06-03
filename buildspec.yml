@@ -31,8 +31,6 @@ phases:
       - export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       - aws eks update-kubeconfig --name $CLUSTER_NAME
-      - aws sts get-caller-identity
-      - kubectl get nodes
       - kubectl apply -f web-deploy.yml
       - printf '[{"name":"web-deploy","imageUri":"%s"}]' $ECR_REPO_URI:$TAG > build.json
 artifacts:
