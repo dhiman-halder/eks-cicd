@@ -109,7 +109,7 @@ Resources:
             Value: !Ref GitSourceRepo
           - Name: CLUSTER_NAME
             Value: !Ref ClusterName
-          - Name: CODEBUILD_KUBECTL_ROLE_ARN
+          - Name: KUBECTL_ROLE_ARN
             Value: !Sub arn:aws:iam::${AWS::AccountId}:role/${CodeBuildKubectlRoleName}
       Name: !Ref AWS::StackName
       ServiceRole: !GetAtt CodeBuildServiceRole.Arn
